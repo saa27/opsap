@@ -5,7 +5,7 @@ import { createBottomTabNavigator } from "react-navigation-tabs";
 import { createMaterialBottomTabNavigator } from "react-navigation-material-bottom-tabs";
 import { Platform, Text } from "react-native";
 
-import { FontAwesome5, Ionicons,MaterialIcons } from "@expo/vector-icons";
+import { FontAwesome5, Ionicons, MaterialIcons } from "@expo/vector-icons";
 import Colors from "../components/Colors";
 
 import HomeScreen from "../screens/HomeScreen";
@@ -20,6 +20,9 @@ const defaultNavOptions = {
   headerStyle: {
     backgroundColor: Platform.OS === "android" ? Colors.primary : "white",
   },
+  // headerTitleStyle: {
+  //   fontFamily: "italic",
+  // },
   headerTintColor: Platform.OS === "android" ? "white" : Colors.primary,
 };
 
@@ -84,7 +87,9 @@ const tabScreenConfig = {
     screen: second,
     navigationOptions: {
       tabBarIcon: (tabInfo) => {
-        return <Ionicons name="md-photos" size={25} color={tabInfo.tintColor} />;
+        return (
+          <Ionicons name="md-photos" size={25} color={tabInfo.tintColor} />
+        );
       },
       tabBarColor: "#282828",
       tabBarLabel: Platform.OS === "android" ? <Text>Gallery</Text> : "Search",
@@ -94,18 +99,21 @@ const tabScreenConfig = {
     screen: third,
     navigationOptions: {
       tabBarIcon: (tabInfo) => {
-        return <Ionicons name="md-people" size={25} color={tabInfo.tintColor} />;
+        return (
+          <Ionicons name="md-people" size={25} color={tabInfo.tintColor} />
+        );
       },
       tabBarColor: "#282828",
-      tabBarLabel:
-        Platform.OS === "android" ? <Text>Team</Text> : "Favourites",
+      tabBarLabel: Platform.OS === "android" ? <Text>Team</Text> : "Favourites",
     },
   },
   EventReel: {
     screen: fourth,
     navigationOptions: {
       tabBarIcon: (tabInfo) => {
-        return <MaterialIcons name="event" size={25} color={tabInfo.tintColor} />;
+        return (
+          <MaterialIcons name="event" size={25} color={tabInfo.tintColor} />
+        );
       },
       tabBarColor: "#282828",
       tabBarLabel:
@@ -116,7 +124,13 @@ const tabScreenConfig = {
     screen: fifth,
     navigationOptions: {
       tabBarIcon: (tabInfo) => {
-        return <FontAwesome5 name="hands-helping" size={25} color={tabInfo.tintColor} />;
+        return (
+          <FontAwesome5
+            name="hands-helping"
+            size={25}
+            color={tabInfo.tintColor}
+          />
+        );
       },
       tabBarColor: "#282828",
       tabBarLabel:
