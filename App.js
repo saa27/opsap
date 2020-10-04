@@ -3,7 +3,6 @@ import { StyleSheet, Text, View } from "react-native";
 import * as Font from "expo-font";
 
 import OnePlusNavigator from "./navigation/OnePlusNavigator";
-import { AppLoading } from "expo";
 
 // const fetchFonts = () => {
 //   return Font.loadAsync({
@@ -11,18 +10,18 @@ import { AppLoading } from "expo";
 //     "italic": require("./assets/fonts/NeueHaasDisplay-BlackItalic.woff"),
 //   });
 // };
+const fetchFonts = () => {
+  return Font.loadAsync({
+    "open-sans": require("./assets/fonts/OpenSans-Bold.ttf"),
+    // "hello" : require("./assets/fonts/NeueHaasDisplay-Black.woff")
+  });
+};
 
 export default function App() {
-  // const [fontLoaded, setFontLoaded] = useState(false);
-  // if (!fontLoaded) {
-  //   return (
-  //     <AppLoading
-  //       startAsync={fetchFonts}
-  //       onFinish={() => {
-  //         setFontLoaded(true);
-  //       }}
-  //     />
-  //   );
-  // }
+  const [fontLoaded, setFontLoaded] = useState(false);
+  if (!fontLoaded) {
+    fetchFonts().then(() => setFontLoaded(true));
+    return null;
+  }
   return <OnePlusNavigator />;
 }
