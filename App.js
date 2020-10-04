@@ -7,7 +7,13 @@ import OnePlusNavigator from "./navigation/OnePlusNavigator";
 const fetchFonts = () => {
   return Font.loadAsync({
     "open-sans": require("./assets/fonts/OpenSans-Bold.ttf"),
-    "black" : require("./assets/fonts/NeueHaasDisplay-Black.otf")
+    "black": require("./assets/fonts/NeueHaasDisplay-Black.otf"),
+    "blackItalic": require("./assets/fonts/NeueHaasDisplay-BlackItalic.otf"),
+    "thin": require("./assets/fonts/NeueHaasDisplay-Thin.otf"),
+    "xthin": require("./assets/fonts/NeueHaasDisplay-XThin.otf"),
+    "medium": require("./assets/fonts/NeueHaasDisplay-Mediu.otf"),
+    "roman": require("./assets/fonts/NeueHaasDisplay-Roman.otf"),
+    // "black": require("./assets/fonts/NeueHaasDisplay-Black.otf"),
   });
 };
 

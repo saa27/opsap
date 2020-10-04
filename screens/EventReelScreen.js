@@ -57,7 +57,7 @@ const EventReelScreen = (props) => {
             color="darkgray"
             size={25}
           />
-          <Text style={{ fontSize: 25 }}>Upcoming Events</Text>
+          <Text style={styles.text}>Upcoming Events</Text>
         </View>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => props.navigation.navigate("Ongoing")}>
@@ -68,7 +68,7 @@ const EventReelScreen = (props) => {
             color="darkgray"
             size={25}
           />
-          <Text style={{ fontSize: 25 }}>On-going Events</Text>
+          <Text style={styles.text}>On-going Events</Text>
         </View>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => props.navigation.navigate("Past")}>
@@ -79,7 +79,7 @@ const EventReelScreen = (props) => {
             color="darkgray"
             size={25}
           />
-          <Text style={{ fontSize: 25 }}>Past Events</Text>
+          <Text style={styles.text}>Past Events</Text>
         </View>
       </TouchableOpacity>
     </ScrollView>
@@ -89,16 +89,19 @@ const EventReelScreen = (props) => {
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
+    backgroundColor: "white",
   },
   imgContainer: {
-    height: 200,
+    height: 250,
     alignItems: "center",
+    borderWidth: 1,
+    borderColor: "black",
   },
   subHeader1: {
     color: "#c71010",
     paddingHorizontal: 10,
     fontSize: 40,
-    fontFamily: "black",
+    fontFamily: "roman",
   },
   subHeader2: {
     color: "#990505",
@@ -121,8 +124,11 @@ const styles = StyleSheet.create({
     borderBottomColor: "#990505",
     borderBottomWidth: 1,
     alignItems: "center",
-
     backgroundColor: "rgba(255, 0, 12, 0.2)",
+  },
+  text: {
+    fontFamily: "roman",
+    fontSize: 18,
   },
 });
 

@@ -15,7 +15,7 @@ const TeamScreen = (props) => {
       {/* <Text style={styles.header}>Student Ambassadors</Text> */}
       <View style={styles.container}>
         <Text style={styles.subHeader1}>Meet Our</Text>
-        <Text style={styles.subHeader2}>Student Ambassadors.</Text>
+        <Text style={styles.subHeader2}>Student  Ambassadors.</Text>
       </View>
       <View style={styles.list}>
         <View style={styles.item}>
@@ -130,17 +130,17 @@ const styles = StyleSheet.create({
     paddingBottom: 0,
   },
   subHeader1: {
-    color: "#c71010",
+    color: "#C61422",
     paddingHorizontal: 10,
     fontSize: 25,
     fontFamily: "open-sans",
   },
   subHeader2: {
     color: "#990505",
-    fontWeight: "bold",
     paddingHorizontal: 10,
     fontSize: 30,
     paddingBottom: 17,
+    fontFamily: 'thin'
   },
   container: {
     borderLeftWidth: 5,
