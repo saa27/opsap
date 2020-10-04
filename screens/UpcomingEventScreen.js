@@ -24,33 +24,29 @@ const UpcomingEventScreen = (props) => {
           resizeMode="contain"
         />
       </View>
-      <ImageBackground
-        source={require("../assets/images/myImages/OnePlus8T.jpg")}
-        style={{ height: 500, width: width,}}
-      >
-        <View style={styles.textCont}>
-          <Text style={styles.header}>
-            OnePlus 8T: Experience OxygenOS 11 out of the box
+
+      <View style={styles.textCont}>
+        <Text style={styles.header}>
+          OnePlus 8T: Experience OxygenOS 11 out of the box
+        </Text>
+        <View style={styles.description}>
+          <Text style={styles.text}>
+            The OnePlus 8T launch is just a couple weeks away and we'd like to
+            share some exciting news with you ahead of its arrival. We're very
+            pleased to announce that the upcoming OnePlus 8T flagship will
+            launch with OxygenOS 11 out of the box. {"\n"}And on top of that,
+            aside from Google’s own products, the OnePlus 8T will be the first
+            global smartphone to launch with Android 11. With OxygenOS, we’ve
+            always focused on giving you the fastest and smoothest flagship
+            experience possible. {"\n"}
+            {"\n"}Now, with the upcoming OnePlus 8T and OxygenOS 11, you’ll have
+            what we feel is the best combination of hardware and software,
+            letting you enjoy improved one-handed gestures for easier navigation
+            and an overall more refined experience thanks to the 120Hz Fluid
+            Display.
           </Text>
-          <View style={styles.description}>
-            <Text style={styles.text}>
-              The OnePlus 8T launch is just a couple weeks away and we'd like to
-              share some exciting news with you ahead of its arrival. We're very
-              pleased to announce that the upcoming OnePlus 8T flagship will
-              launch with OxygenOS 11 out of the box. {"\n"}And on top of that,
-              aside from Google’s own products, the OnePlus 8T will be the first
-              global smartphone to launch with Android 11. With OxygenOS, we’ve
-              always focused on giving you the fastest and smoothest flagship
-              experience possible. {"\n"}
-              {"\n"}Now, with the upcoming OnePlus 8T and OxygenOS 11, you’ll
-              have what we feel is the best combination of hardware and
-              software, letting you enjoy improved one-handed gestures for
-              easier navigation and an overall more refined experience thanks to
-              the 120Hz Fluid Display.
-            </Text>
-          </View>
         </View>
-      </ImageBackground>
+      </View>
       <View style={styles.imgContainer}>
         <Image
           source={require("../assets/images/events/upcoming_events/warp_charge.png")}
