@@ -8,6 +8,7 @@ import {
   Linking,
 } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import Colors from "../components/Colors";
 
 const TeamScreen = (props) => {
   return (
@@ -15,7 +16,7 @@ const TeamScreen = (props) => {
       {/* <Text style={styles.header}>Student Ambassadors</Text> */}
       <View style={styles.container}>
         <Text style={styles.subHeader1}>Meet Our</Text>
-        <Text style={styles.subHeader2}>Student  Ambassadors.</Text>
+        <Text style={styles.subHeader2}>Student Ambassadors.</Text>
       </View>
       <View style={styles.list}>
         <View style={styles.item}>
@@ -130,17 +131,17 @@ const styles = StyleSheet.create({
     paddingBottom: 0,
   },
   subHeader1: {
-    color: "#C61422",
+    color: Colors.primary,
     paddingHorizontal: 10,
     fontSize: 25,
-    fontFamily: "open-sans",
+    fontFamily: "medium",
   },
   subHeader2: {
     color: "#990505",
     paddingHorizontal: 10,
     fontSize: 30,
     paddingBottom: 17,
-    fontFamily: 'thin'
+    fontFamily: "thin",
   },
   container: {
     borderLeftWidth: 5,
@@ -173,6 +174,8 @@ const styles = StyleSheet.create({
   },
   names: {
     fontSize: 16,
+    fontFamily: "roman",
+    letterSpacing: 1,
   },
 });
 
