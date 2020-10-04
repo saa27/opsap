@@ -13,6 +13,9 @@ import GalleryScreen from "../screens/GalleryScreen";
 import TeamScreen from "../screens/TeamScreen";
 import EventReelScreen from "../screens/EventReelScreen";
 import CollaborateScreen from "../screens/CollaborateScreen";
+import PastEventScreen from "../screens/PastEventScreen";
+import UpcomingEventScreen from "../screens/UpcomingEventScreen";
+import OngoingEventScreen from "../screens/OngoingEventScreen";
 
 const defaultNavOptions = {
   headerTitle: "One Plus",
@@ -58,6 +61,9 @@ const third = createStackNavigator(
 const fourth = createStackNavigator(
   {
     EventS: EventReelScreen,
+    Ongoing: OngoingEventScreen,
+    Past: PastEventScreen,
+    Upcoming: UpcomingEventScreen,
   },
   {
     defaultNavigationOptions: defaultNavOptions,

@@ -1,5 +1,13 @@
 import React from "react";
-import { View, Text, StyleSheet, Image, ScrollView } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  ScrollView,
+  Linking,
+} from "react-native";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 const TeamScreen = (props) => {
   return (
@@ -11,6 +19,21 @@ const TeamScreen = (props) => {
       </View>
       <View style={styles.list}>
         <View style={styles.item}>
+          <TouchableOpacity
+            onPress={() => Linking.openURL("mailto:v-atishay.jain@oneplus.com")}
+          >
+            <View>
+              <View style={styles.card}>
+                <Image
+                  source={require("../assets/images/team/AtishayJain.jpeg")}
+                  style={{ height: 210, width: 170 }}
+                />
+                <View style={styles.titleContainer}>
+                  <Text style={styles.names}>Atishay Jain</Text>
+                </View>
+              </View>
+            </View>
+          </TouchableOpacity>
           <View>
             <View style={styles.card}>
               <Image
@@ -19,17 +42,6 @@ const TeamScreen = (props) => {
               />
               <View style={styles.titleContainer}>
                 <Text style={styles.names}>Advait Karmakar</Text>
-              </View>
-            </View>
-          </View>
-          <View>
-            <View style={styles.card}>
-              <Image
-                source={require("../assets/images/team/AtishayJain.jpeg")}
-                style={{ height: 210, width: 170 }}
-              />
-              <View style={styles.titleContainer}>
-                <Text style={styles.names}>Atishay Jain</Text>
               </View>
             </View>
           </View>
@@ -121,7 +133,7 @@ const styles = StyleSheet.create({
     color: "#c71010",
     paddingHorizontal: 10,
     fontSize: 25,
-    fontFamily: 'open-sans'
+    fontFamily: "open-sans",
   },
   subHeader2: {
     color: "#990505",
@@ -134,7 +146,7 @@ const styles = StyleSheet.create({
     borderLeftWidth: 5,
     borderLeftColor: "#990505",
     marginLeft: 20,
-    marginVertical:20
+    marginVertical: 20,
   },
   list: {
     flex: 1,

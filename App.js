@@ -4,16 +4,10 @@ import * as Font from "expo-font";
 
 import OnePlusNavigator from "./navigation/OnePlusNavigator";
 
-// const fetchFonts = () => {
-//   return Font.loadAsync({
-//     "black": require("./assets/fonts/NeueHaasDisplay-Black.woff"),
-//     "italic": require("./assets/fonts/NeueHaasDisplay-BlackItalic.woff"),
-//   });
-// };
 const fetchFonts = () => {
   return Font.loadAsync({
     "open-sans": require("./assets/fonts/OpenSans-Bold.ttf"),
-    // "hello" : require("./assets/fonts/NeueHaasDisplay-Black.woff")
+    "black" : require("./assets/fonts/NeueHaasDisplay-Black.otf")
   });
 };
 
