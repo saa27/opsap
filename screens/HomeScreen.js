@@ -34,7 +34,7 @@ const HomeScreen = (props) => {
       </View>
       <ImageBackground
         style={styles.imageBg}
-        source={require("../assets/images/events/on_going_events/unbox_4.jpg")}
+        source={require("../assets/images/myImages/gallery.jpeg")}
       >
         <TouchableOpacity onPress={() => props.navigation.navigate("GalleryS")}>
           <View style={styles.view}>
@@ -50,7 +50,7 @@ const HomeScreen = (props) => {
       </ImageBackground>
       <ImageBackground
         style={styles.imageBg}
-        source={require("../assets/images/myImages/team3.jpeg")}
+        source={require("../assets/images/myImages/teamF.jpeg")}
       >
         <TouchableOpacity onPress={() => props.navigation.navigate("TeamS")}>
           <View style={styles.view}>
@@ -161,7 +161,7 @@ const styles = StyleSheet.create({
     marginLeft: 20,
     marginVertical: 20,
     paddingTop: 5,
-    backgroundColor: Colors.accent
+    backgroundColor: Colors.accent,
   },
   viewText: {
     marginRight: 15,
@@ -170,7 +170,7 @@ const styles = StyleSheet.create({
   },
   screen: {
     flex: 1,
-    backgroundColor: Colors.accent
+    backgroundColor: Colors.accent,
   },
   icons: {
     flexDirection: "row",
