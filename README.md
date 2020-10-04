@@ -35,5 +35,5 @@ All fired up? Awesome! Please have a look at [the guidelines](https://github.com
 We cannot wait to see your ultimate creation. 🔥
 
 
-# Video Demo
+# Video Demo for My App
 https://res.cloudinary.com/dht1rd0lr/video/upload/v1601829108/20201004_215812_hmaait.mp4
