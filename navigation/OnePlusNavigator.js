@@ -16,17 +16,20 @@ import CollaborateScreen from "../screens/CollaborateScreen";
 import PastEventScreen from "../screens/PastEventScreen";
 import UpcomingEventScreen from "../screens/UpcomingEventScreen";
 import OngoingEventScreen from "../screens/OngoingEventScreen";
+import HeaderImage from "../components/HeaderImage";
 
 const defaultNavOptions = {
-  headerTitle: "One Plus",
+  headerTitle: "ONEPLUS",
   headerShown: true,
   headerStyle: {
     backgroundColor: Platform.OS === "android" ? Colors.primary : "white",
   },
-  // headerTitleStyle: {
-  //   fontFamily: "italic",
-  // },
+  headerTitleStyle: {
+    fontFamily: "roman",
+    marginLeft: 100    
+  },
   headerTintColor: Platform.OS === "android" ? "white" : Colors.primary,
+  headerLeft: () => <HeaderImage />,
 };
 
 const first = createStackNavigator(

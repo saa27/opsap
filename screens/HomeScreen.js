@@ -69,37 +69,43 @@ const HomeScreen = (props) => {
           </View>
         </TouchableOpacity>
       </ImageBackground>
-      <View style={styles.icons}>
-        <FontAwesome5
-          onPress={() =>
-            Linking.openURL(
-              "https://open.spotify.com/playlist/1SeGoo6wWZFg4Kbz27475X?si=AZ-cyEL8Reuy7UMGYrwipQ"
-            )
-          }
-          name="spotify"
-          size={40}
-          color="black"
-        />
-        <FontAwesome5
-          onPress={() =>
-            Linking.openURL(
-              "https://www.instagram.com/oneplus_sap/?igshid=yeipvjydv0l7"
-            )
-          }
-          name="instagram"
-          size={40}
-          style={{ color: "black" }}
-        />
-        <MaterialIcons
-          onPress={() =>
-            Linking.openURL(
-              "https://forums.oneplus.com/forums/student-community/"
-            )
-          }
-          name="forum"
-          size={40}
-          style={{ color: "black" }}
-        />
+
+      <View style={styles.bottom}>
+        <View style={styles.caption}>
+          <Text style={{fontFamily: 'roman', letterSpacing: 1,}}>Like what you see? You'll love us here:</Text>
+        </View>
+        <View style={styles.icons}>
+          <FontAwesome5
+            onPress={() =>
+              Linking.openURL(
+                "https://open.spotify.com/playlist/1SeGoo6wWZFg4Kbz27475X?si=AZ-cyEL8Reuy7UMGYrwipQ"
+              )
+            }
+            name="spotify"
+            size={35}
+            color="black"
+          />
+          <FontAwesome5
+            onPress={() =>
+              Linking.openURL(
+                "https://www.instagram.com/oneplus_sap/?igshid=yeipvjydv0l7"
+              )
+            }
+            name="instagram"
+            size={35}
+            style={{ color: "black" }}
+          />
+          <MaterialIcons
+            onPress={() =>
+              Linking.openURL(
+                "https://forums.oneplus.com/forums/student-community/"
+              )
+            }
+            name="forum"
+            size={35}
+            style={{ color: "black" }}
+          />
+        </View>
       </View>
     </ScrollView>
   );
@@ -112,8 +118,14 @@ const styles = StyleSheet.create({
   icons: {
     flexDirection: "row",
     justifyContent: "space-evenly",
+  },
+  caption: {
+    alignItems: "center",
+    marginBottom:20,
+  },
+  bottom: {
     padding: 40,
-    backgroundColor: '#db5c5c'
+    backgroundColor: "#db5c5c",
   },
   view: {
     flexDirection: "row",
