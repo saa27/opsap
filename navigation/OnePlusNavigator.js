@@ -26,7 +26,7 @@ const defaultNavOptions = {
   },
   headerTitleStyle: {
     fontFamily: "roman",
-    marginLeft: 100    
+    marginLeft: 100,
   },
   headerTintColor: Platform.OS === "android" ? "white" : Colors.primary,
   headerLeft: () => <HeaderImage />,
@@ -153,7 +153,7 @@ const AppNavigator =
     ? createMaterialBottomTabNavigator(tabScreenConfig, {
         //for android like effect
         // defaultNavigationOptions: defaultNavOptions,
-        activeColor: Colors.primary,
+        activeColor: "#db5c5c",
         inactiveColor: "#a6a6a6",
         shifting: true,
       })
@@ -162,7 +162,7 @@ const AppNavigator =
         // defaultNavigationOptions: defaultNavOptions,
         tabBarOptions: {
           inactiveBackgroundColor: Colors.accent,
-          activeBackgroundColor: Colors.primary,
+          activeBackgroundColor: "#db5c5c",
           activeTintColor: Colors.primary,
           inactiveTintColor: "rgba( 10, 10, 10, 0.6)", //temporary colors
           tabStyle: {

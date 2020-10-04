@@ -1,5 +1,5 @@
-import { AntDesign } from "@expo/vector-icons";
-import React from "react";
+import { AntDesign, MaterialIcons } from "@expo/vector-icons";
+import React, { useEffect, useRef, useState } from "react";
 import {
   View,
   Text,
@@ -10,20 +10,65 @@ import {
   Dimensions,
   ScrollView,
   TouchableOpacity,
+  Animated,
+  ImageBackground,
 } from "react-native";
 import pictures from "../components/data";
 
 const { width, height } = Dimensions.get("window");
 
 const EventReelScreen = (props) => {
+  const scrollX = useRef(new Animated.Value(0)).current;
+  const [pictureIndex, setPictureIndex] = useState(0);
+  useEffect(() => {
+    scrollX.addListener(({ value }) => {
+      const index = Math.round(value / width);
+      setPictureIndex(index);
+    });
+    return () => {
+      scrollX.removeAllListeners();
+    };
+  }, []);
+  const slider = useRef(null);
+  const goNext = () => {
+    slider.current.scrollToOffset({
+      offset: (pictureIndex + 1) * width,
+    });
+  };
+
+  const goPrevious = () => {
+    slider.current.scrollToOffset({
+      offset: (pictureIndex - 1) * width,
+    });
+  };
   const renderPictureItem = ({ item, index }) => {
     return (
       <View style={styles.imgContainer}>
-        <Image
+        <ImageBackground
           source={item.image}
           style={{ height: "100%", width: width }}
           resizeMode="contain"
-        />
+        >
+          <View
+            style={{
+              justifyContent: "space-between",
+              marginVertical: 100,
+              flexDirection: "row",
+              marginHorizontal: 10,
+            }}
+          >
+            <MaterialIcons
+              onPress={goPrevious}
+              name="keyboard-arrow-left"
+              size={40}
+            />
+            <MaterialIcons
+              onPress={goNext}
+              name="keyboard-arrow-right"
+              size={40}
+            />
+          </View>
+        </ImageBackground>
       </View>
     );
   };
@@ -36,15 +81,14 @@ const EventReelScreen = (props) => {
         data={pictures}
         renderItem={renderPictureItem}
         keyExtractor={(item) => item.id}
-        // ref={slider} //coz we want to make changes in the Flatlist with respect to the slider
-        // scrollEventThrottle={16} //to make the animation faster and smoother
-        // onScroll={Animated.event(
-        //   //event triggered for scrolling in x direction
-        //   [{ nativeEvent: { contentOffset: { x: scrollX } } }],
-        //   {
-        //     useNativeDriver: false, //to improve performance of animations. if false, animations done on js thread
-        //   }
-        // )}
+        ref={slider}
+        scrollEventThrottle={16}
+        onScroll={Animated.event(
+          [{ nativeEvent: { contentOffset: { x: scrollX } } }],
+          {
+            useNativeDriver: false,
+          }
+        )}
       />
       <View style={styles.container}>
         <Text style={styles.subHeader1}>Events.</Text>
@@ -93,7 +137,7 @@ const styles = StyleSheet.create({
   },
   imgContainer: {
     height: 250,
-    alignItems: "center",
+    // alignItems: "center",
     borderWidth: 1,
     borderColor: "black",
   },
@@ -124,7 +168,7 @@ const styles = StyleSheet.create({
     borderBottomColor: "#990505",
     borderBottomWidth: 1,
     alignItems: "center",
-    backgroundColor: "rgba(255, 0, 12, 0.2)",
+    backgroundColor: "rgba(255, 0, 12, 0.4)",
   },
   text: {
     fontFamily: "roman",

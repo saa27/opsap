@@ -1,14 +1,14 @@
 const pictures = [
   {
-    id: "1",
+    id: "0",
     image: require("../assets/images/events/upcoming_events/oxygen_os.jpg"),
   },
   {
-    id: "2",
+    id: "1",
     image: require("../assets/images/events/upcoming_events/warp_charge.png"),
   },
   {
-    id: "3",
+    id: "2",
     image: require("../assets/images/myImages/event3.jpg"),
   },
 ];
